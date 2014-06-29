@@ -31,11 +31,5 @@ fprintf(s,'%c','a');
   mbox = msgbox('Serial Communication setup.'); uiwait(mbox);
 %}
   disp(fscanf(s,'%s'));
-  %readAcc(s);
-  calibrate(s);
-if ~isempty(instrfind)
-    fclose(instrfind);
-    delete(instrfind);
-end
-close all
+
   

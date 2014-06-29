@@ -4,16 +4,16 @@ function calCo= calibrate(s)
     calCo.g=1;
       %read push the raw accelerometer output at three different orientations
       mbox = msgbox('Lay accelerometer on a flat surface.', 'Calibration'); uiwait(mbox);
-      flushinput(s);
+      
       [gx_z gy_z gz_z] = readAcc(out,calCo);   
 	  %gZ = 1, gX = gY = 0 orientation
       
 	  mbox = msgbox('Stand accelerometer on edge so that X arrow points up.', 'Calibration'); uiwait(mbox); 
-      flushinput(s);
+    
       [gx_x gy_x gz_x] = readAcc(out,calCo);   %gX = 1, gY = gZ = 0 orientation
       
 	  mbox = msgbox('Stand accelerometer on edge so that Y arrow points up.', 'Calibration'); uiwait(mbox);
-      flushinput(s);
+      
       [gx_y gy_y gz_y] = readAcc(out,calCo);   %gY = 1, gX = gZ = 0 orientation
       
 	  %calculate offsets for each axis

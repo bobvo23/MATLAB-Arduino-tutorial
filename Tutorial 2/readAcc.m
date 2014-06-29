@@ -6,6 +6,7 @@ function [gx gy gz] = readAcc(out,calCo)
 
         % fprintf(out.s,'R');
           %readpush voltages from accelerometer and reorder
+          flushinput(out.s);
           accRawData = fscanf(out.s,'%s');
           while(accRawData(1)~='x');
              accRawData = fscanf(out.s,'%s');
