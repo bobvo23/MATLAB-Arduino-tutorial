@@ -68,6 +68,8 @@ while(1) %get(button, 'UserData'))
         axis([1 buf_len -1.5 1.5]);
         str = sprintf('stepcount %d',stepCount);
         title(str);
+        button = uicontrol('Style','text','String',str,...
+                        'pos',[0 0 300 20]);
         xlabel('time');
         ylabel('Magnitude of X axis acceleration (filtered)');
         drawnow;
